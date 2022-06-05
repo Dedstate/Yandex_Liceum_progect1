@@ -1,1 +1,1 @@
-# Yandex-lyceum-progect1
+# Yandex-lyceum-project1
