@@ -2,14 +2,19 @@ import os
 import sys
 
 from PyQt6 import uic
-from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QLineEdit
-from pathlib import Path
+from PyQt6.QtWidgets import QApplication, QMainWindow
 from random import choice
 
 
 with open("src/russian2.txt", encoding='utf-8') as f:
     ls = f.read().splitlines()
-    print(ls)
+i = 0
+while i < len(ls):
+    print(i)
+    if len(ls[i]) != 5:
+        ls.pop(i)
+    else:
+        i += 1
 # Сhange working directory
 cur_dir = os.path.dirname(__file__)
 os.chdir(cur_dir)
@@ -26,9 +31,7 @@ class MyWidget(QMainWindow):
         self.text = ""
         self.count = 0
 
-    # for i in range(len(ls)):
-    #     if len(ls[i]) != 5:
-    #         ls.pop(i)
+
 
     def attempt(self):
         if self.text not in self.word:
